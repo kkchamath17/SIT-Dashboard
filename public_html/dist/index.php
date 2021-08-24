@@ -246,6 +246,7 @@ $number_formated= "[".implode(",",$number)."]";
 <script type="text/javascript">
 window.dataf= <?php echo $number_formated; ?>
 </script>
+</div></div>
 
                         <div class="row">
                             <div class="col-xl-6">
