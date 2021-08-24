@@ -267,7 +267,7 @@ window.dataf= <?php echo $number_formated; ?>
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table id="dataTable" cellspacing="0">
                     <thead>
                     <tr>
                     <th>ID</th>
