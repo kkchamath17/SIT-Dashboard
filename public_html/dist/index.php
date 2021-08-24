@@ -163,13 +163,7 @@ while($row = mysqli_fetch_assoc($result))
 <div class="mr-5"><?php echo $row['revenue'];?>  Revenue</div>
 </div>
 <?php
-}
-}
-else
-{
-echo '0 results';
-}
-?>
+}}else{echo '0 results';}?>
 <a class="card-footer text-white clearfix small z-1" href="#">
 <span class="float-left">View Details</span>
 <span class="float-right">
@@ -273,7 +267,6 @@ window.dataf= <?php echo $number_formated; ?>
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                            <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
