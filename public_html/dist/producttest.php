@@ -226,3 +226,11 @@ include('pserver.php');
 </div>
 </body>
 </html>
+
+<?php
+                    $servername = "localhost";
+                    $username = "gpcvcsjfun";
+                    $password = "Chamath@1999";
+                    $dbname = "gpcvcsjfun";
+                    // Create connection
+                    $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
