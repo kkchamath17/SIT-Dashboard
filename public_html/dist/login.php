@@ -24,7 +24,7 @@
                                         <form method="post" action="login.php">
                                             <?php include('errors.php'); ?>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="username"/>
+                                                <input class="form-control" id="inputEmail" type="text" placeholder="name@example.com" name="username"/>
                                                 <label for="inputEmail">Username</label>
                                             </div>
                                             <div class="form-floating mb-3">
