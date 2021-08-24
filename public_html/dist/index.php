@@ -273,7 +273,7 @@ window.dataf= <?php echo $number_formated; ?>
                     <th>ID</th>
                     <th>Name of Product</th>
                     <th>Price of Product</th>
-                    <th>Product somrthing</th>
+                    <th>Product Catrogy</th>
                     <th>Product Details</th>
                     </tr>
                     </thead>
