@@ -1,6 +1,9 @@
 <?php session_start();
 if (!isset($_SESSION['username']))
-    header("Location: login.php");?>
+{
+    header("Location: login.php");
+    die();
+}?>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
