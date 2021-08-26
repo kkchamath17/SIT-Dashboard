@@ -275,13 +275,6 @@ echo '0 results';
                                         </td>
                                     </tr>
                                     </tbody>
-                                    <?php
-                                    $count++;
-                                    }
-                                    } else {
-                                    echo '0 results';
-                                    }
-                                    ?>
                                     
                                 </table>
                             </div>
