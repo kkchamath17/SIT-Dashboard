@@ -129,7 +129,7 @@ include('pserver.php');
 </div>
     <div class="form-group">
         <label>Product Price</label>
-        <input type="text" class="form-control"  name="price" required>
+        <input type="text" class="form-control"  name="pirce" required>
 </div>
     <div class="form-group">
         <label>Product Catgory</label>
