@@ -137,7 +137,7 @@ include('pserver.php');
 </div>
     <div class="form-group">
         <label>Product Details</label>
-        <input type="text" class="form-control" name="pdetails" required>
+        <textarea class="form-control" name="pdet" required></textarea>
 </div>
         <button type="submit" class="btn btn-primary" name="reg_p">Submit</button>
 </form>
