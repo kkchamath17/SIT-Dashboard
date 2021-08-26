@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 $sql = "INSERT INTO products (product_name,product_price,product_cat,product_details)
-VALUES ('$pname', '$price', '$pcat','$pdetails')";
+VALUES ('$pname', '$price', '$pcat', '$pdetails')";
 if ($conn->query($sql) === TRUE) {
 echo "alert('New record created successfully');";
 } else {
