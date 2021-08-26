@@ -254,29 +254,25 @@ echo '0 results';
                                     while($row = mysqli_fetch_assoc($result)) { ?>
                                     <tbody>
                                     <tr>
-                                    <td>
-                                    <?php echo $row['product_id']; ?>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <td>
-                                    <?php echo $row['product_name']; ?>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <td>
-                                    <?php echo $row['product_price']; ?>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <td>
-                                    <?php echo $row['product_cat']; ?>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <td>                                    
-                                    <?php echo $row['product_details']; ?>
-                                    </td>
+                                        <td>
+                                            <?php echo $row['product_id']; ?>
+                                        </td>
+                                    
+                                        <td>
+                                            <?php echo $row['product_name']; ?>
+                                        </td>
+                                    
+                                        <td>
+                                            <?php echo $row['product_price']; ?>
+                                        </td>
+                                    
+                                        <td>
+                                            <?php echo $row['product_cat']; ?>
+                                        </td>
+                                    
+                                        <td>                                    
+                                            <?php echo $row['product_details']; ?>
+                                        </td>
                                     </tr>
                                     </tbody>
                                     <?php
