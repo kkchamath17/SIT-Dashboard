@@ -215,6 +215,7 @@ echo '0 results';
                                     <thead>
                                         <tr>
                                             
+                                            <th>Product ID</th>
                                             <th>Name of Product</th>
                                             <th>Price of Product</th>
                                             <th>Product Catrogy</th>
@@ -225,6 +226,7 @@ echo '0 results';
                                     <tfoot>
                                         <tr>
                                             
+                                            <th>Product ID</th>
                                             <th>Name of Product</th>
                                             <th>Price of Product</th>
                                             <th>Product Catrogy</th>
