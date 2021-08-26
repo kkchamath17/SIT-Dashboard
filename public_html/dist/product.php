@@ -114,7 +114,7 @@ include('pserver.php');
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Create Product</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                             <li class="breadcrumb-item active">Product Entry</li>
                         </ol>
                         <div class="row">
@@ -129,7 +129,7 @@ include('pserver.php');
 </div>
     <div class="form-group">
         <label>Product Price</label>
-        <input type="text" class="form-control"  name="pirce" required>
+        <input type="text" class="form-control"  name="price" required>
 </div>
     <div class="form-group">
         <label>Product Catgory</label>

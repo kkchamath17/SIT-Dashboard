@@ -8,7 +8,7 @@ $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
 if (isset($_POST['reg_p'])) {
 // receive all input values from the form
 $pname = mysqli_real_escape_string($conn,$_POST['pname']);
-$price = mysqli_real_escape_string($conn,$_POST['pirce']);
+$price = mysqli_real_escape_string($conn,$_POST['price']);
 $pcat = mysqli_real_escape_string($conn,$_POST['pcat']);
 $product_details = mysqli_real_escape_string($conn,$_POST['pdetails']);
 // Check connection
