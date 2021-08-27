@@ -10,7 +10,7 @@ if (isset($_POST['reg_p'])) {
 $pname = mysqli_real_escape_string($conn,$_POST['pname']);
 $price = mysqli_real_escape_string($conn,$_POST['price']);
 $pcat = mysqli_real_escape_string($conn,$_POST['pcat']);
-$product_details = mysqli_real_escape_string($conn,$_POST['pdetails']);
+$pdetails = mysqli_real_escape_string($conn,$_POST['pdetails']);
 // Check connection
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
