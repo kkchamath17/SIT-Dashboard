@@ -126,7 +126,11 @@ if (!isset($_SESSION['username']))
                     // Create connection
                     $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
                     $sum = "SELECT sum(revenue) as total FROM sales_stats";
-    ?>
+                    $result = mysqli_query($conn, $sum);
+                        if (mysqli_num_rows($result) > 0)
+                        while($row += mysqli_fetch_assoc($result))
+{
+?>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
