@@ -139,10 +139,25 @@ if (mysqli_num_rows($result) > 0)
 {while($row = mysqli_fetch_assoc($result))
     {
     ?>
+<?php
+$servername = "localhost";
+                    $username = "gpcvcsjfun";
+                    $password = "Chamath@1999";
+                    $dbname = "gpcvcsjfun";
+                    // Create connection
+                    $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
+                    $query = "SELECT * FROM sales_stats";
+$query_run = mysql_query($query);
+
+$qty= 0;
+while ($num = mysql_fetch_assoc ($query_run)) {
+    $qty += $num['revenue'];
+}
+    ?>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"><?php echo $row['Vistors_sum']; ?> visitors</div>
+                                    <div class="card-body"><?php echo $qty ?> visitors</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
