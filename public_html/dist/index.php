@@ -147,10 +147,10 @@ $servername = "localhost";
                     // Create connection
                     $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
                     $query = "SELECT * FROM sales_stats";
-$query_run = mysql_query($query);
+$query_run = mysql_query($conn, $query);
 
 $qty= 0;
-while ($num = mysql_fetch_assoc ($query_run)) {
+while ($num = mysql_fetch_assoc ($conn, $query_run)) {
     $qty += $num['revenue'];
 }
     ?>
