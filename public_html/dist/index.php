@@ -126,6 +126,7 @@ if (!isset($_SESSION['username']))
                     // Create connection
                     $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
                     $sqll = "SELECT  * from sales_stats WHERE month='Mar' ";
+                    $sum = "SELECT SUM(revenue) FROM sales_stats";
                     if (mysqli_query($conn, $sqll))
 {
 echo "";
@@ -142,7 +143,7 @@ if (mysqli_num_rows($result) > 0)
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"><?php echo $row['Vistors']; ?> visitors</div>
+                                    <div class="card-body"><?php echo $sum; ?> visitors</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
