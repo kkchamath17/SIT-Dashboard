@@ -126,7 +126,7 @@ if (!isset($_SESSION['username']))
                     // Create connection
                     $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
                     $sqll = "SELECT  * from sales_stats WHERE month='Mar' ";
-                    $sum = "SELECT SUM(revenue) FROM sales_stats";
+                    $sum = "SELECT *  from sales_stats SUM(revenue)";
                     if (mysqli_query($conn, $sqll))
 {
 echo "";
