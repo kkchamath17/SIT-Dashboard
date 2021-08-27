@@ -127,7 +127,7 @@ if (!isset($_SESSION['username']))
                     $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
                     $sqll = "SELECT  * from sales_stats WHERE month='Mar' ";
                     $sum = "SELECT *  from sales_stats SUM(revenue)";
-                    if (mysqli_query($conn, $sqll))
+                    if (mysqli_query($conn, $sqll, $sum))
 {
 echo "";
 }
@@ -135,7 +135,7 @@ else
 {
 echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
 }
-$result = mysqli_query($conn, $sqll);
+$result = mysqli_query($conn, $sqll, $sum);
 if (mysqli_num_rows($result) > 0)
 {while($row = mysqli_fetch_assoc($result))
     {
