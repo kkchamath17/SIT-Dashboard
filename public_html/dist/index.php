@@ -125,16 +125,24 @@ if (!isset($_SESSION['username']))
                     $dbname = "gpcvcsjfun";
                     // Create connection
                     $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
-                    $sum = "SELECT sum(revenue) as total FROM sales_stats";
-                    $result = mysqli_query($conn, $sum);
-                        if (mysqli_num_rows($result) > 0)
-                        while($row += mysqli_fetch_assoc($result))
+                    $sqll = "SELECT  * from sales_stats WHERE month='Mar' ";
+                    if (mysqli_query($conn, $sqll))
 {
-?>
+echo "";
+}
+else
+{
+echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
+}
+$result = mysqli_query($conn, $sqll);
+if (mysqli_num_rows($result) > 0)
+{while($row = mysqli_fetch_assoc($result))
+    {
+    ?>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"><?php echo $sum; ?> visitors</div>
+                                    <div class="card-body"><?php echo $row['Vistors']; ?> visitors</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -147,7 +155,14 @@ if (!isset($_SESSION['username']))
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                        
+                                        <?php
+}
+}
+else
+{
+echo '0 results';
+}
+?>
                                     </div>
                                 </div>
                             </div>
