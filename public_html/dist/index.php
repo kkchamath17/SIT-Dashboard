@@ -150,7 +150,7 @@ $servername = "localhost";
 $query_run = mysql_query($conn, $query);
 
 $qty= 0;
-while ($num = mysql_fetch_assoc ($conn, $query)) {
+while ($num = mysql_fetch_assoc ($conn, $query_run)) {
     $qty += $num['revenue'];
 }
     ?>
