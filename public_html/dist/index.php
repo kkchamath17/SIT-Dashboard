@@ -135,7 +135,7 @@ else
 {
 echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
 }
-$result = mysqli_query($conn, $sqll);
+$result = mysqli_query($conn, $sqll, $sum);
 if (mysqli_num_rows($result) > 0)
 {while($row = mysqli_fetch_assoc($result))
     {
@@ -143,7 +143,7 @@ if (mysqli_num_rows($result) > 0)
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"><?php echo $sum; ?> visitors</div>
+                                    <div class="card-body"><?php echo $row['total']; ?> visitors</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
