@@ -1,11 +1,13 @@
 <?php
 session_start();
 // initializing variables
-$username = "kkchamath";
-$email    = "kkchamath17@gmail.com";
+$username = "";
+$email = "";
+$password = "";
 $errors = array();
 // connect to the database
-$db = mysqli_connect('143.110.241.2', 'gpcvcsjfun', 'Chamath@1999', 'gpcvcsjfun');
+$db = mysqli_connect('localhost', 'root', '', 'gpcvcsjfun');
+
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {

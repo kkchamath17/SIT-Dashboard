@@ -13,12 +13,13 @@ if (!isset($_SESSION['username']))
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="index.php">Start Bootstrap</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -47,7 +48,7 @@ if (!isset($_SESSION['username']))
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -99,15 +100,22 @@ if (!isset($_SESSION['username']))
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
+                            </a>
+                            <a class="nav-link" href="product.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Products
                             </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?php
+                        $logedInUsername = $_SESSION['username'];
+                        echo $logedInUsername;
+                        ?>
                     </div>
                 </nav>
             </div>
@@ -118,31 +126,10 @@ if (!isset($_SESSION['username']))
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
-                        <?php
-                    $servername = "localhost";
-                    $username = "gpcvcsjfun";
-                    $password = "Chamath@1999";
-                    $dbname = "gpcvcsjfun";
-                    // Create connection
-                    $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
-                    $sqll = "SELECT  * from sales_stats WHERE month='Mar' ";
-                    if (mysqli_query($conn, $sqll))
-{
-echo "";
-}
-else
-{
-echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
-}
-$result = mysqli_query($conn, $sqll);
-if (mysqli_num_rows($result) > 0)
-{while($row = mysqli_fetch_assoc($result))
-    {
-    ?>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"><?php echo $row['Vistors']; ?> visitors</div>
+                                    <div class="card-body">visitors</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -151,24 +138,16 @@ if (mysqli_num_rows($result) > 0)
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body"><?php echo $row['revenue'];?> revenue</div>
+                                    <div class="card-body">revenue</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                        <?php
-}
-}
-else
-{
-echo '0 results';
-}
-?>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body"><?php echo $row['Vistors']; ?> visitors</div>
+                                    <div class="card-body">visitors</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -234,13 +213,14 @@ echo '0 results';
 
                                         </tr>
                                     </tfoot>
+                                    <tbody>
                                     <?php
                                     $servername = "localhost";
-                                    $username = "gpcvcsjfun";
-                                    $password = "Chamath@1999";
+                                    $username = "root";
+                                    $password = "";
                                     $dbname = "gpcvcsjfun";
                                     // Create connection
-                                    $conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
+                                    $conn = new mysqli("localhost", "root", "", "gpcvcsjfun");
                                     $sql = 'SELECT * from products';
                                     if (mysqli_query($conn, $sql)) {
                                     echo "";
@@ -252,7 +232,7 @@ echo '0 results';
                                     if (mysqli_num_rows($result) > 0) {
                                     // output data of each row
                                     while($row = mysqli_fetch_assoc($result)) { ?>
-                                    <tbody>
+                                    
                                     <tr>
                                         <td>
                                             <?php echo $row['product_id']; ?>
@@ -273,8 +253,6 @@ echo '0 results';
                                         <td>                                    
                                             <?php echo $row['product_details']; ?>
                                         </td>
-                                    </tr>
-                                    </tbody>
                                     <?php
                                     $count++;
                                     }
@@ -282,7 +260,8 @@ echo '0 results';
                                     echo '0 results';
                                     }
                                     ?>
-                                    
+                                    </tr>
+                                    </tbody>                                    
                                 </table>
                             </div>
                         </div>
@@ -309,5 +288,6 @@ echo '0 results';
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="table.js"></script>
     </body>
 </html>

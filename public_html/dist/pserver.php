@@ -1,10 +1,10 @@
 <?php
 $servername = "localhost";
-$username = "gpcvcsjfun";
-$password = "Chamath@1999";
+$username = "root";
+$password = "";
 $dbname = "gpcvcsjfun";
 // Create connection
-$conn = new mysqli("localhost", "gpcvcsjfun", "Chamath@1999", "gpcvcsjfun");
+$conn = new mysqli("localhost", "root", "", "gpcvcsjfun");
 if (isset($_POST['reg_p'])) {
 // receive all input values from the form
 $pname = mysqli_real_escape_string($conn,$_POST['pname']);
